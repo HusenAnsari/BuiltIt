@@ -15,7 +15,7 @@ import java.io.IOException;
 public class EndPoint extends AsyncTask<onJokeReceived, Void, String> {
     private static MyApi myApiService = null;
     private onJokeReceived listener;
-    private String ROOT_URL = "http://192.168.0.3:8080/_ah/api/";
+    private String ROOT_URL = "http://192.168.2.2:8080/_ah/api/";
     @Override
     protected String doInBackground(onJokeReceived... params) {
         if(myApiService == null) {

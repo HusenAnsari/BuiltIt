@@ -34,11 +34,11 @@ public class MainActivityFragment extends Fragment{
             @Override
             public void onAdClosed() {
                 startJokeActivity(mJoke);
-                //loadInterstitialAd();
+
             }
         });
 
-        //loadInterstitialAd();
+
 
         Button button = (Button) root.findViewById(R.id.jokebutton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -51,19 +51,12 @@ public class MainActivityFragment extends Fragment{
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("592B01EF0E9D09D8DF0DE13360D9C5BB")
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
         return root;
     }
 
-    /*private void loadInterstitialAd() {
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        mInterstitialAd.loadAd(adRequest);
-    }*/
 
     private void startJokeActivity(String joke){
         Intent mIntent = new Intent(getActivity(),jokeDisplayActivity.class);
